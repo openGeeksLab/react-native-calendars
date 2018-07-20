@@ -1,5 +1,7 @@
 import {Platform} from 'react-native';
 
+export const justifyHeader = 'space-between';
+
 export const foregroundColor = '#ffffff';
 export const backgroundColor = '#f4f4f4';
 export const separatorColor = '#e8e9ec';
@@ -18,6 +20,7 @@ export const textMonthFontFamily = 'System';
 export const textDayHeaderFontFamily = 'System';
 
 export const textMonthFontWeight = '300';
+export const textDayHeaderFontWeight = '300';
 
 export const textDayFontSize = 16;
 export const textMonthFontSize = 16;
@@ -39,3 +42,10 @@ export const agendaDayTextColor = '#7a92a5';
 export const agendaDayNumColor = '#7a92a5';
 export const agendaTodayColor = textLinkColor;
 export const agendaKnobColor = Platform.OS === 'ios' ? '#f2F4f5' : '#4ac4f7';
+
+export const badgeColor = textLinkColor;
+export const selectedBadgeColor = foregroundColor;
+
+export const todayContainerStyle = {};
+export const todayTextStyle = {};
+
