@@ -9,7 +9,7 @@
   "dependencies": {
     "react": "16.3.1",
     "react-native": "0.55.2",
-    "react-native-calendars": "^1.19.4"
+    "react-native-calendars": "https://github.com/openGeeksLab/react-native-calendars"
   },
   "devDependencies": {
     "babel-jest": "23.4.0",
