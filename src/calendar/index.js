@@ -14,6 +14,7 @@ import UnitDay from './day/period';
 import MultiDotDay from './day/multi-dot';
 import MultiPeriodDay from './day/multi-period';
 import SingleDay from './day/custom';
+import BadgeDay from './day/badge';
 import CalendarHeader from './header';
 import shouldComponentUpdate from './updater';
 
@@ -207,6 +208,8 @@ class Calendar extends Component {
       return MultiPeriodDay;
     case 'custom':
       return SingleDay;
+    case 'badge':
+      return BadgeDay;
     default:
       return Day;
     }
