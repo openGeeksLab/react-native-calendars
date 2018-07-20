@@ -9,6 +9,12 @@ The package is both **Android** and **iOS** compatible.
 
 ## Fork updates by openGeeksLab
 
+## Installation
+
+```
+$ yarn add https://github.com/openGeeksLab/react-native-calendars
+```
+
 #### Add new date mark type ***badge***
 
 <kbd>
