@@ -7,6 +7,65 @@ This module includes various customizable react native calendar components.
 
 The package is both **Android** and **iOS** compatible.
 
+## Fork updates by openGeeksLab
+
+#### Add new date mark type ***badge***
+
+<kbd>
+  <img height=50 src="http://dl4.joxi.net/drive/2018/07/20/0029/2384/1952080/80/0ffd85d569.jpg?raw=true">
+</kbd>
+
+```javascript
+<Calendar
+  markingType={'badge'}
+  // Collection of dates that have to be marked. Default = {}
+  markedDates={{
+    '2018-07-16': {marked: true, count: 3},
+    '2018-07-17': {marked: true, count: '9+'},
+    '2018-07-19': {marked: true, count: 2},
+  }}
+/>
+```
+
+#### Add ability to customize style
+
+```javascript
+theme={{
+    /**
+    * canhge justifyContent style by header
+    */
+    justifyHeader: 'flex-start',
+    /**
+    * customize style for badge
+    */
+    badge: {
+      width: 20,
+      height: 20,
+    },
+    badgeText: {
+      fontSize: 10,
+    },
+    /**
+    * customize style for today
+    */
+    todayContainerStyle: {
+      marginTop: -5,
+    },
+    todayTextStyle: {
+      fontSize: 20,
+      fontWeight: 'bold',
+    },
+    /* 
+    * styles for name of days
+    *
+    * textDayHeaderFontSize ,
+    * textDayHeaderFontFamily,
+    * textDayHeaderFontWeight,
+    * textSectionTitleColor
+    * */
+  }}
+```
+
 ## Try it out
 
 You can run example module by performing these steps:
