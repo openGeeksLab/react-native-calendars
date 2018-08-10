@@ -11,6 +11,9 @@ export default function getStyle(theme={}) {
       paddingRight: 5,
       backgroundColor: appStyle.calendarBackground
     },
+    adndroidContainer: {
+      marginVertical: 10,
+    },
     monthView: {
       backgroundColor: appStyle.calendarBackground,
     },
@@ -20,6 +23,9 @@ export default function getStyle(theme={}) {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-around',
+    },
+    androidWeek: {
+      justifyContent: 'flex-start',
     },
     dayContainer: {
       width: 32

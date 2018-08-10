@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {
-  FlatList, Platform, Dimensions,
+  FlatList, Platform, Dimensions, View
 } from 'react-native';
 import PropTypes from 'prop-types';
 import XDate from 'xdate';
@@ -183,7 +183,19 @@ class CalendarList extends Component {
   }
 
   renderCalendar({item}) {
-    return (<CalendarListItem item={item} calendarHeight={this.props.calendarHeight} calendarWidth={this.props.horizontal ? this.props.calendarWidth : undefined  } {...this.props} />);
+    return (
+      <View
+        style={{
+          marginBottom: (Platform.OS === 'android' && this.props.markingType === 'badge') ? 20 : 0
+        }}
+      >
+        <CalendarListItem
+          item={item}
+          calendarHeight={this.props.calendarHeight}
+          calendarWidth={this.props.horizontal ? this.props.calendarWidth : undefined  }
+          {...this.props} />
+      </View>
+    );
   }
 
   getItemLayout(data, index) {

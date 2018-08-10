@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {
   TouchableOpacity,
   Text,
-  View
+  View,
+  Platform,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import {shouldUpdate} from '../../../component-updater';
@@ -77,6 +78,12 @@ class Day extends Component {
     } else if (this.props.state === 'today') {
       containerStyle.push(this.style.today);
       textStyle.push(this.style.todayText);
+    }
+
+    if (Platform.OS === 'android') {
+      badgeStyle.push(this.style.androidBadge);
+      containerStyle.push(this.style.androidBase);
+      textStyle.push(this.style.androidText);
     }
 
     return (

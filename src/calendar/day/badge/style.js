@@ -11,13 +11,20 @@ export default function styleConstructor(theme={}) {
       height: 32,
       alignItems: 'center'
     },
+    androidBase: {
+      flex: 1,
+      alignItems: 'center'
+    },
     text: {
       marginTop: Platform.OS === 'android' ? 4 : 6,
       fontSize: appStyle.textDayFontSize,
       fontFamily: appStyle.textDayFontFamily,
       fontWeight: '300',
       color: appStyle.dayTextColor,
-      backgroundColor: 'rgba(255, 255, 255, 0)'
+      backgroundColor: 'rgba(255, 255, 255, 0)',
+    },
+    androidText: {
+      //marginBottom: 10,
     },
     alignedText: {
       marginTop: Platform.OS === 'android' ? 4 : 6
@@ -53,8 +60,11 @@ export default function styleConstructor(theme={}) {
       position: 'absolute',
       bottom: -1,
       right: -13,
-
       ...theme.badge,
+    },
+    androidBadge: {
+      right: 0,
+      bottom: 0,
     },
     badgeText: {
       fontSize: 10,

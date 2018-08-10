@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {
   View,
-  ViewPropTypes
+  ViewPropTypes,
+  Platform,
 } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -163,6 +164,14 @@ class Calendar extends Component {
     } else if ((minDate && !dateutils.isGTE(day, minDate)) || (maxDate && !dateutils.isLTE(day, maxDate))) {
       state = 'disabled';
     } else if (!dateutils.sameMonth(day, this.state.currentMonth)) {
+      if (Platform.OS === 'android' && this.props.markingType === 'badge') {
+        return (
+          <View
+            style={{ flex: 1 }}
+            key={id}
+          />
+        )
+      }
       state = 'disabled';
     } else if (dateutils.sameDate(day, XDate())) {
       state = 'today';
@@ -241,7 +250,12 @@ class Calendar extends Component {
       week.unshift(this.renderWeekNumber(days[days.length - 1].getWeek()));
     }
 
-    return (<View style={this.style.week} key={id}>{week}</View>);
+    const weekStyle = [this.style.week];
+    if (Platform.OS === 'android' && this.props.markingType === 'badge') {
+      weekStyle.push(this.style.androidWeek);
+    }
+
+    return (<View style={weekStyle} key={id}>{week}</View>);
   }
 
   render() {
@@ -259,8 +273,13 @@ class Calendar extends Component {
         indicator = true;
       }
     }
+    const containerStyle = [this.style.container, this.props.style];
+    if (Platform.OS === 'android' && this.props.markingType === 'badge') {
+      containerStyle.push(this.style.androidConteiner);
+    }
+
     return (
-      <View style={[this.style.container, this.props.style]}>
+      <View style={containerStyle}>
         <CalendarHeader
           theme={this.props.theme}
           hideArrows={this.props.hideArrows}
